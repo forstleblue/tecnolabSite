@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row">
+
+{% for post in categoria_list %}
+   <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2" style="padding: 5px;">
+    <div class="thumbnail sfondothumb">{% load cropping %}
+      <a  href="{{ MYDIR }}/{{ post.id }}"><img class="featurette-image img-responsive4" src="{% cropped_thumbnail post "cropping" %}" alt="{{post.titolo}}"></a>
+      <div class="caption" style="padding: 0px;">
+      {% if session_language = 'en' %}
+        <h4 class="thumbtitle">{{ post.titolo_eng }}</h4>
+      {% else %}
+        <h4 class="thumbtitle">{{ post.titolo }}</h4>
+      {% endif %}
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div><!-- fine row -->
+<p>{% include "componenti/social.html" %}</p>
+
+
+{% endblock %}

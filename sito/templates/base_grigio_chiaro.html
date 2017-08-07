@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">{% load staticfiles %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="graficapassword">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
+
+    <title>TECNOLAB STAND</title>
+
+ <!-- REVOLUTION SLIDER -->
+  
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+
+    <!-- FLEXSLIDER CAROUSEL ---->
+    <script defer src="{% static 'js/jquery.flexslider.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen" />
+
+
+<!-- FINE REVOLUTION SLIDER -->
+    <!-- GMAPS -->
+     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+    
+  <!-- POP UP GALLERY -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Karla:400,700">
+  <link rel="stylesheet" href="{% static 'popup/css/lightbox.css' %}" media="screen"/>
+  <script src="{% static 'popup/js/lightbox-2.6.min.js' %}"></script>
+    
+  <!-- font awesome -->
+    <link rel="stylesheet" href="{% static 'font/css/font-awesome.min.css' %}">
+  
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'dist/css/bootstrap.css' %}" rel="stylesheet">
+
+
+
+    <!-- SCORRIMENTO CAROSELLO -->
+    <!-- <link rel="Stylesheet" type="text/css" href="{% static '/css/smoothDivScroll.css" /> -->
+    
+  <!-- CAROSELLO DESIGN -->
+
+ <link rel="stylesheet" type="text/css" href="{% static 'cardesign/jcarousel.skeleton.css' %}">
+ <script type="text/javascript" src="{% static 'cardesign/libs/jquery/jquery.js' %}"></script>
+ <script type="text/javascript" src="{% static 'cardesign/dist/jquery.jcarousel.min.js' %}"></script>
+
+<!-- Fine Carosello Desin -->
+
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'navbar.css' %}" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="./assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- GOOGLE ANALYTICS -->
+
+<style>
+.sfondonero {
+  background-color: #e5e1e1;
+}
+
+.navbar-default {
+  background-color: #e5e1e1;
+  border-color: #e5e1e1;
+  padding-top:0px;
+  margin-top: 0px;
+}
+
+.menutopright {
+margin-top: 40px;
+background-color: #e5e1e1;
+}
+
+.languages {
+  background-color: #888888;
+}
+
+.languages :hover,
+.languages :active,
+.languages :link,
+.languages :visited
+  {
+  background-color: #888888; 
+  color: #FFFFFF; 
+}
+
+</style>
+
+
+  </head>
+
+
+<body style="background-color: #e5e1e1">
+
+<div class="container" style="padding-left: 35px; padding-right: 35px; margin-top: 0px; padding-top: 0px;">
+ 
+ <!-- BANDIERINE -->
+ {% include "componenti/language.html" %}
+
+<!-- Menu -->
+{% include "componenti/menu2.html" %}
+<!-- fine Menu -->
+
+
+
+
+{% block content %}
+
+
+
+{% endblock %}
+
+
+
+
+ </div> <!-- /container -->
+
+
+<!-- Footer -->
+{% include "componenti/footer.html" %}
+<!-- Fine Footer -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'dist/js/bootstrap.min.js' %}"></script>
+
+
+        <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'rs-plugin/css/style.css' %}" media="screen" />
+    <script type="text/javascript" src="{% static 'rs-plugin/js/jquery.themepunch.plugins.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'rs-plugin/css/settings.css' %}" media="screen" />
+
+    
+  </body>
+</html>

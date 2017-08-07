@@ -1,0 +1,25 @@
+{% extends 'app2/base_landing.html' %}
+
+{% block content %}
+
+{% include 'app2/componenti/slider.html' %}
+
+
+<section id="loghi">
+	<div class="container">
+		<div class="col-xs-12">
+			<h2 class="text-center">I NOSTRI CLIENTI</h2>
+		</div>
+
+		{% for logo in page.loghi.all %}
+			<div class="col-xs-12 col-sm-1">
+				{% load cropping %}
+				<img src="{% cropped_thumbnail logo "miniatura" %}" class="img-responsive">
+			</div>
+		{% endfor %}
+
+	</div><!-- contaner -->
+</div>
+
+
+{% endblock %}

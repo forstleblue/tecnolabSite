@@ -1,0 +1,23 @@
+
+
+
+
+<div class="col-md-3"></div>
+
+<div id="spaziodesign" class="col-md-6">
+        {% load cropping %}
+        <a href="{% cropped_thumbnail design "centralebig" %}" data-lightbox="{{ design.titolo }}">
+        <img class="img-responsive" src="{% cropped_thumbnail design "centralethumb" %}" alt="{{ design.titolo }}"></a>
+   
+</div>
+
+<div class="col-md-3">
+<h3 class="titolopro goldcolor">{{ design.titolo }}</h3>
+<p class="texttext">{{ design.body }}</p>
+</div>
+
+
+
+
+
+       

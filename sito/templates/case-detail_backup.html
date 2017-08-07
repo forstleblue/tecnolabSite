@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row">
+  <div id="albero" class="col-xs-4">
+  <a href="{% url 'home' %}">HOME</a> | <a href="{% url 'case-history' %}">CASE HISTORY</a> | <a href="{% url 'casehistory-detail' case.id %}">{{case.titolo}}</a>
+</div>
+<div class="col-xs-8">
+  <h2 class="titolopro goldcolor3" style="margin-top:0px;padding-left:20px; font-weight:400;letter-spacing: 0px">CASE HISTORY
+    <span style="font-weight:100">|</span> 
+    <span style="font-size:20px;">{{case.titolo}}</span></h2>
+</div>
+</div>
+
+
+
+
+<div class="tp-banner-container">
+    <div class="tp-banner" >
+      <ul>
+        <!-- SLIDE  -->
+        {% for filer in filer_list %}
+        <li data-transition="fade" data-slotamount="7" data-masterspeed="1500">
+          <!-- MAIN IMAGE -->
+          {% load thumbnail %}
+          <img src="{% thumbnail filer.file 1140x487 crop %}"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+</div>    
+
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+             jQuery('.tp-banner').revolution(
+            {
+              delay:4000,
+              startwidth:1140,
+              startheight:487,
+              hideThumbs:10
+            });
+        });
+      </script>
+
+
+<!-- Place somewhere in the <body> of your page -->
+<div class="flexslider" style="margin-top:15px; margin-left:-5px; padding-left:0px;">
+  <ul class="slides" style="margin-left:0px;padding-left:0px;">
+    {% for filer in filer_list %}
+    <li style="padding-right:10px; padding-left:0px;">
+      <a href="/media/{{ filer.file }}" data-lightbox="roadtrip">
+      <img src="{% thumbnail filer.file 400x250 crop %}" class="thumb-carousel" />
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<script type="text/javascript">
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    animationLoop: true,
+    itemWidth: 210,
+    itemMargin: 5
+  });
+});
+</script>
+
+<div class="col-xs-12 col-sm-6" style="margin-left:0px; padding-left:0px;">
+  <p style="color: #bebebe; text-align:justify;margin-top:-20px; padding-left:0px;margin-left:px;">
+    {{case.body|safe}}
+    <br>
+    <br>
+  </p>
+  <p style="color: #404041; text-align:justify;margin-top:-40px; padding-left:0px;margin-left:px;">
+    <br>
+    <br>
+    <br>
+    <a href="http://{{case.link}}" target="_Blank">{{case.link}}</a>
+    <br>
+    <br>
+    <br>
+  </p>
+</div>
+
+<div class="col-xs-12 col-sm-6">
+  <img src="/media/{{case.planimetria}}" class="img-responsive" style="margin-top:-10px;padding-top:0px;">
+</div>
+
+{% endblock %}

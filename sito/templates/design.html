@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+<div class="row">
+
+{% for post in categoria_list %}
+  <div class="hidden-xs hidden-sm hidden-md col-lg-2">
+    <p class="testorollover">{{ post.titolo }}</p>
+    <div class="thumbnail rolloverimg" style="border-width: 0px;">
+
+      {% load cropping %}
+      <a  href="{% cropped_thumbnail post "croppingdesign" %}" data-lightbox="{{ post.id }}">
+        <img class="featurette-image img-responsive" src="{% cropped_thumbnail post "croppingdesign" %}" alt="{{ post.titolo }}"></a>
+    </div>
+  </div>
+
+
+  <!-- MOBILE -->
+
+ <div class="col-xs-12 col-sm-6 col-md-3 hidden-lg" style="margin-bottom: 35px;">
+    <div class="thumbnail rolloverimg" style="border-width: 0px;">
+      {% for immagini in post.galleria.all %}
+      {% load cropping %}
+      <a  href="{% cropped_thumbnail immagini "designbig" %}" data-lightbox="{{ post.titolo }}">
+      {% endfor %}
+        {% load cropping %}
+        <img class="featurette-image img-responsive" src="{% cropped_thumbnail post "croppingdesign" %}" alt="{{ post.titolo }}"></a>
+    </div>
+    <p style="z-index: 1000; font-size: 10pt; text-align: center; padding: 0px;">{{ post.titolo }}</p>
+  </div>
+
+
+
+
+{% endfor %}
+</div><!-- fine row -->
+<p>{% include "componenti/social.html" %}</p>
+
+
+
+
+
+
+{% for post in categoria_list %}
+
+      {% for immagini in post.galleria.all %}
+      {% load cropping %}
+      <a  href="{% cropped_thumbnail immagini "designbig" %}" data-lightbox="{{ post.id }}">
+      {% endfor %}
+  {% endfor %}
+
+
+
+
+
+
+
+{% endblock %}}

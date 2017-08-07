@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!-- SPAZIO MOBILE CARICAMENTO SOTTOMENU -->
+<div class="row">
+  <div id="spaziosottomenu" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+</div>
+<!-- FINE SPAZIO SOTTOMENU -->
+
+
+<!-- INIZIO GALLERY RENDER -->
+
+<div class="row">
+{% for post in render_list %}
+
+  <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2" style="margin-bottom: 15px;">
+   {% load cropping %}
+    <a href="{% cropped_thumbnail post "croppingrender" %}" data-lightbox="{{ post.titolo }}" title="{{ post.titolo }}"> 
+    <img src="{% cropped_thumbnail post "cropping" %}" class="img-responsive" alt=""></a></div>
+  {% endfor %}
+  
+
+
+
+  
+</div> <!-- fine row -->
+<p>{% include "componenti/social.html" %}</p>
+
+{% for post in render_list %}
+   {% for immagini in post.galleria.all %}
+   {% load cropping %}
+    <a href="{% cropped_thumbnail immagini "croppingrender" %}" data-lightbox="{{ post.titolo }}" title="{{ post.titolo }}"> 
+    {% endfor %}
+{% endfor %}
+
+
+{% endblock %}

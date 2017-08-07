@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+<h1 class="titolopro goldcolor">FURNITURE</h1>
+
+
+
+
+
+<!-- NUOVO -->
+<div class="row">
+  {% for forniture in forniture_list %}
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+    <div class="thumbnail" style="min-height: 500px;">{% load cropping %}
+      <a href="{{MYDIR}}/forniture/{{forniture.id}}">
+      	<img src="{% cropped_thumbnail forniture "croppingdesign" %}" alt="{{forniture.titolo}}" class="img-responsive">
+  	  </a>
+      <div class="caption">
+        <!-- INGLESE -->
+        {% if session_language = 'en' %}
+        <h3 class="goldcolor">{{ forniture.titolo_eng}}</h3>
+            <h5><strong>Year:</strong> {{forniture.anno}}</h5>
+        	<h5><strong>Company:</strong> {{forniture.azienda}}</h5>
+        <!--h6>{{ forniture.pub_date }}</h6>
+        <p>{{forniture.body_eng|safe|truncatechars:240}}</p>
+        <p><a href="{{MYDIR}}/forniture/{{forniture.id}}" class="btn btn-default" role="button">Continue</a></p-->
+        <!-- FINE INGLESE -->
+        {% else %}
+        <h3 class="goldcolor">{{ forniture.titolo}}</h3>
+        <h5><strong>Anno:</strong> {{forniture.anno}}</h5>
+        <h5><strong>Azienda:</strong> {{forniture.azienda}}</h5>
+        <!-- h6>{{ forniture.pub_date }}</h6>
+        <p>{{forniture.body|safe|truncatechars:240}}</p -->
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div><!-- FINE ROW -->
+
+
+ <!-- Next/Prev page links  -->
+ <div class="col-sm-12" style="text-align: center">
+        {% if forniture_list and forniture_list.paginator.num_pages > 1 %}
+        <div class="pagination" style="margin-top: 20px; margin-left: -20px; ">
+            <span class="step-links">
+                {% if forniture_list.has_previous %}
+                    <a href= "?page={{ forniture_list.previous_page_number }}"><i class="fa fa-caret-left fa-2x"></i></a>
+                {% endif %}
+
+                <span class="current">
+                    &nbsp;Pagina {{ forniture_list.number }} di {{ forniture_list.paginator.num_pages }}
+                </span>
+
+                {% if forniture_list.has_next %}
+                    <a href="?page={{ forniture_list.next_page_number }}"> <i class="fa fa-caret-right fa-2x"></i></a>
+                {% endif %}
+            </span>
+        </div>
+        {% endif %}
+</div>
+
+{% endblock%}

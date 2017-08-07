@@ -1,0 +1,24 @@
+
+
+
+<div class="col-md-1"><a href="#" class="jcarousel-control-prev"><i style="padding-top: 50px;" class="fa fa-chevron-circle-left fa-3x"></i></i></a></div>
+
+
+  <div class="col-md-10"> <!-- Carousel -->
+  <div class="jcarousel">
+  
+    <ul>
+    {% for design in design_list %}
+      <li id="designmagico">
+        <a href="{{ design.id }}">{% load cropping %}
+        <img src="{% cropped_thumbnail design "croppingthumb" %}" style="width: 100px; padding: 5px;" alt="{{ design.titolo }}"></a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div><!-- Jcarousel end -->
+</div>
+
+
+
+<div class="col-md-1"> <a href="#" class="jcarousel-control-next"><i style="padding-top: 50px;" class="fa fa-chevron-circle-right fa-3x"></i></i></a></div>
+

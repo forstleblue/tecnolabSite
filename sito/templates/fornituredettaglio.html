@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row">
+
+
+	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    	{% load cropping %}
+     	<img class="img-responsive" src="{% cropped_thumbnail forniture "croppingdesign" %}" style="width: 100%; margin-top:20px;">
+  	</div> <!-- FINE COL MD 12-->
+
+  	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+  		{% if session_language = 'en' %}
+		<h1 class="goldcolor">{{ forniture.titolo_eng }}</h1>
+		{% else %}
+		<h1 class="goldcolor">{{ forniture.titolo }}</h1>
+		{% endif %}
+		<hr>
+		<p>
+		{% if session_language = 'en' %}
+			{{ forniture.body_eng }}
+		{% else %}
+			{{ forniture.body }}
+		{% endif %}
+		</p>
+		<hr>
+		<strong>ANNO: </strong>{{forniture.anno}}<br>
+		<strong>AZIENDA: </strong><a href="{{forniture.link}}" target="_Blank">{{forniture.azienda}}</a><br><br>
+		<a href="{{forniture.link}}" target="_Blank">{% load cropping %}
+			<img src="{% cropped_thumbnail forniture "logo_azienda_thumb" %}" style="max-width:200px;">
+		</a>
+
+  	</div>
+
+</div><!-- row -->
+
+<div class="row">
+
+	<div class="col-xs-12 col-lg-12">
+		<br><br>
+		<hr>
+	</div>
+
+{% for immagini in forniture.galleria.all %}
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" style="padding-bottom: 20px;">
+    {% load cropping %}
+    <a href="{% cropped_thumbnail immagini "designnews" %}" data-lightbox="{{forniture.titolo}}">
+    <img class="img-responsive" src="{% cropped_thumbnail immagini "designthumb" %}" style="width: 100%;"></a>
+</div>  
+{% endfor %}
+
+</div>
+
+{% endblock%}

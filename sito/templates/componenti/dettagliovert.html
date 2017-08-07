@@ -1,0 +1,43 @@
+<div class="row spaziotoprow">
+
+  <div class="col-sm-12 col-xs-12 col-md-12 col-lg-6">
+    
+    <!-- <h2 class="titolopro goldcolor">{{ post.titolo }}</h2> -->
+    <!-- TESTO INGLESE -->
+   {% if session_language = 'en' %}
+        <p class="texttext"></br>
+        </br>{{ post.body_eng|safe }}
+        </p>
+        <p>&nbsp;</p>   
+        <p><h5>Share:&nbsp;</h5>
+        {% include "componenti/social.html" %}
+        </p>
+  {% else %}
+       <!-- ITALIANO -->
+       <p class="texttext"></br>
+       </br>{{ post.body|safe }}
+       </p>
+       <p>&nbsp;</p>   
+       <p><h5>Condividi:&nbsp;</h5>
+       {% include "componenti/social.html" %}
+    </p>
+  {% endif %}
+   
+
+  </div><!--Fine COL MD6 -->
+
+  <div class="col-sm-12 col-xs-12 col-md-12 col-lg-6"><p>&nbsp;</p>
+    <!-- PARLANO DI NOI -->
+      {% include "componenti/stampa.html" %}
+    <!-- fine parlano di noi -->
+
+    {% load cropping %}
+    <img src="{% cropped_thumbnail post.planimetria "croppingslide" %}" class="planimetria"></div>
+  
+
+  
+  </div>
+
+
+
+</div><!-- Fine ROW -->

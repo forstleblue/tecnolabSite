@@ -1,0 +1,9 @@
+<h1>{{ post.titolo}}</h2>
+
+<p>{{ post.id }}</p>
+
+{% for video in post.video.all %}
+
+<p>{{ video.youtubeurl }}</p>
+
+{% endfor %}

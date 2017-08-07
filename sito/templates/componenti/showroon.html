@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row" style="margin-bottom:200px">
+
+
+<div id="albero" class="hidden-xs col-sm-7 col-md-7 col-lg-7">
+  <a href="{% url 'home' %}">HOME</a> | <a href="{% url 'showroom' %}">SHOWROOM</a>
+</div>
+<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+  <h2 class="titolopro text-right goldcolor2">SHOWROOM</h2>
+</div>
+
+{% for post in showroom_list %}
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" style="padding: 5px;">
+    <div class="thumbnail sfondothumb">{% load cropping %}
+      <a href="{% url 'showroom-detail' post.id %}">
+        <img class="featurette-image img-responsive4" src="{% cropped_thumbnail post "cropping" %}" alt="Generic placeholder image">
+      </a>
+      <div class="caption" style="padding-top: 0px; padding-bottom: 0px; padding-left:10px;">
+          <h4 class="thumbtitle2">{{ post.titolo }}</h4>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div><!-- fine row -->
+<p>{% include "componenti/social.html" %}</p>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,65 @@
+
+    
+
+
+
+ <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation">{% load staticfiles %}
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ MYDIR }}/"><img src="{% static 'img/logo_chiaro.png' %}" class="logo" title="logo" alt="logo"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+
+          <!-- MENU A DESTRA -->
+          <ul id="menuactive" class="nav navbar-nav navbar-right menutopright">
+            <li><a href="/#">HOME</a></li>
+            
+            {% if session_language = 'eng' %}
+                  <li><a href="{% url 'chisiamo' %}">TURNKEY PROJECT</a></li>
+                  <li>
+                    <a href="{% url 'fiere' %}">TRADE FAIRS/STANDS</a></li>
+                     <!-- /INTERIOR -->
+                  <!-- MENU ANIMAZIO -->
+                  <li>
+                    <a href="{% url 'showroom' %}">SHOWROOM</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'case-history' %}">CASE HISTORY</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'gallery' %}">GALLERY</a>
+                  </li>
+                  </li> <!-- /FINE DESIGN -->
+                  <!--CONTATTI -->
+                  <li><a href="{% url 'contatti' %}">CONTACT</a></li> 
+
+            {% else %}  
+                  <li><a href="{% url 'chisiamo' %}">CHIAVI IN MANO</a></li>
+                  <li>
+                    <a href="{% url 'fiere' %}">FIERE/STAND</a></li>
+                     <!-- /INTERIOR -->
+                  <!-- MENU ANIMAZIO -->
+                  <li>
+                    <a href="{% url 'showroom' %}">SHOWROOM</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'case-history' %}">CASE HISTORY</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'gallery' %}">GALLERY</a>
+                  </li>
+                  </li> <!-- /FINE DESIGN -->
+                  <!--CONTATTI -->
+                  <li><a href="{% url 'contatti' %}">CONTATTI</a></li> 
+            {% endif %}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+      <!-- FINE MENU -->  
+

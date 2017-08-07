@@ -1,0 +1,57 @@
+<div class="row spaziotoprow">
+
+  <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+    
+    <!-- <h2 class="titolopro goldcolor">{{ post.titolo }}</h2> -->
+    <!-- TESTO INGLESE -->
+   {% if session_language = 'en' %}
+        <p class="texttext"></br>
+        </br>{{ post.body_eng|safe }}
+        </p>
+  {% else %}
+       <!-- ITALIANO -->
+       <p class="texttext"></br>
+       </br>{{ post.body|safe }}
+       </p>
+  {% endif %}
+   
+
+  </div><!--Fine COL MD6 -->
+
+  <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12"><p>&nbsp;</p>
+    <!-- PARLANO DI NOI -->
+     {% if stampa_list %}
+<div class="col-xs-12 speakus">
+  <p>PARLANO DI NOI</p>
+</div>
+
+{% for stampa in stampa_list %}
+<div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+  <a href="{{stampa.link}}" target="_blank">
+    {% load cropping %}
+    <img class="img-responsive" src="{% cropped_thumbnail stampa "cropping" %}">
+  </a>
+</div>
+{% endfor %}
+
+
+
+{% endif %}
+    <!-- fine parlano di noi -->
+  
+  {% load cropping %}
+    <img src="{% cropped_thumbnail post.planimetria "croppingcarousel" %}" class="planimetria">
+  </div>
+  
+  
+  </div>
+  <div class="col-lg-12">
+  </br>
+</br>
+    <p><h5>Condividi:&nbsp;</h5>
+       {% include "componenti/social.html" %}
+    </p></div>
+
+
+
+</div><!-- Fine ROW -->

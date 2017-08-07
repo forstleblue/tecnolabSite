@@ -1,0 +1,18 @@
+
+
+
+<div class="row greymenu">
+
+{% for post in categoria_list %}
+  <div class="col-sm-3 col-md-2">
+    <div class="thumbnail sfondothumb" style="min-height: 130px; margin-top: 10px;">{% load cropping %}
+      <a  href="{{ MYDIR }}/{{ post.id }}"><img class="featurette-image img-responsive" src="{% cropped_thumbnail post "cropping" %}" alt="Generic placeholder image"></a>
+      <div class="caption" style="padding: 0px;">
+        <h4 class="thumbtitle">{{ post.titolo }}</h4>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div><!-- fine row -->
+
+<hr>

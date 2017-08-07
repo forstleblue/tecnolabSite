@@ -1,0 +1,58 @@
+
+
+
+<div class="col-xs-12 col-sm-12 col- md-12 col-lg-12">
+  <!-- HEADER YOUTUBE E ICON-->
+
+<!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+     
+
+      <div class="carousel-inner">
+      	{% for post in post_active %}
+        <div class="item active">
+         	{% for immagini in post.galleria.all|slice:":1" %}
+        	{% load cropping %}
+          <img src="{% cropped_thumbnail immagini "croppingslide" %}" alt="{{ post.titolo }}">
+          {% endfor %}
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>{{ post.titolo }}</h1>
+              <p>{{ post.body|safe|truncatechars:140 }}</p>
+              <p><a class="btn btn-lg btn-primary" href="{{ post.id }}" role="button">Continua</a></p>
+             
+            </div>
+          </div>
+        
+        </div>
+          {% endfor %}
+
+          {% for post in post_list %}
+        <div class="item">
+        
+          {% for immagini in post.galleria.all|slice:":1" %}
+          {% load cropping %}
+          <img src="{% cropped_thumbnail immagini "croppingslide" %}" alt="{{ post.titolo }}">
+          {% endfor %}
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>{{ post.titolo }}</h1>
+              <p>{{ post.body|safe|truncatechars:140}}</p>
+              <p><a class="btn btn-lg btn-primary" href="{{ post.id }}" role="button">Continua</a></p>
+            </div>
+          </div>
+          
+        </div>
+       {% endfor %}
+
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+
+
+
+<!-- FINE CONTENUTO -->
+</div>

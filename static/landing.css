@@ -1,0 +1,71 @@
+body {
+	background-color: #ffffff;
+}
+
+
+#header {
+	background-color: #393536;
+}
+
+#header .logo {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+
+#loghi h2 {
+	color: #393536;
+	font-weight: 200;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+
+.flexslider {
+  margin: 0 0 0px;
+  background: #fff;
+  border: 0px solid #fff;
+  position: relative;
+}
+
+.flex-control-nav {
+    display: none;
+    opacity: 0;
+}
+
+
+footer {
+	margin-top:40px;
+	background-color: #393536;
+	color: #cccccc;
+}
+
+footer p {
+	color: #cccccc;
+	font-size: 10pt;
+	margin-bottom: 40px;
+}
+
+footer .logo {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+footer a,
+footer a:link,
+footer a:hover {
+	color: #cccccc;
+}
+
+span.url-footer a,
+span.url-footer a:link,
+span.url-footer a:visited,
+span.url-footer a:active,
+span.url-footer a:hover {
+	color: #f69731;
+}
+
+
+.logo-confindustria {
+	width: 150px;
+}

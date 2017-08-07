@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style type="text/css">
+.thumbtitle {
+  height: 40px;
+}
+</style>
+<div class="row" style="margin-bottom:200px;">
+
+
+<div id="albero" class="hidden-xs col-sm-7 col-md-7 col-lg-7">
+  <a href="{% url 'home' %}">HOME</a> | <a href="{% url 'gallery' %}">GALLERY</a>
+</div>
+<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+  <h2 class="titolopro text-right goldcolor2">GALLERY</h2>
+</div>
+
+<div class="col-xs-12">&nbsp;</div>
+
+
+{% for post in gallery_list %}
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2" style="padding: 5px; padding-top:0px;padding-bottom:5px;margin-bottom:5px;"> 
+      {% load thumbnail %}
+    <div class="thumbnail sfondothumb" style="margin:0px;padding-top:2:padding-bottom: 2px;">{% load cropping %}
+      <a href="{% thumbnail post.image 800x800 %}" data-lightbox="{{post.id}}" alt="{{post.titolo}}">
+        <img class="featurette-image img-responsive4" src="{% cropped_thumbnail post "cropping" %}" alt="Generic placeholder image">
+      </a>
+      <div class="caption" style="padding-top: 0px; padding-bottom: 0px; padding-left:10px;">
+           <h4 class="thumbtitle">
+            {{ post.titolo }}
+            {% if post.titolo|length <= 21 %}</br>&nbsp;{% endif %}
+          </h4>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div><!-- fine row -->
+<p>{% include "componenti/social.html" %}</p>
+
+
+
+
+
+
+{% endblock %}

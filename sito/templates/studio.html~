@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!-- SPAZIO MOBILE CARICAMENTO SOTTOMENU -->
+<div class="row">
+  <div id="spaziosottomenu" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+</div>
+<!-- FINE SPAZIO SOTTOMENU -->
+
+
+<!-- ++++ CONTENUTO +++ -->
+
+<div class="row spaziotoprow">
+  <!-- INGLESE -->
+  {% if session_language = 'en' %}
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <h2 class="titolopro goldcolor">The Studio</h2>
+    <p class="texttext">The studio Sagitair operates in the branch of Architecture and Design. It was founded in 1990, today we are a dynamic and flexible reality offering high quality professional services. The studio has its own internal technical and computer expertise developed by many experiences in various branches. The multidisciplinary expertise and a predisposition to design innovation combined with an aptitude for research and development, places the studio in a prominent position in the branch of design, transferring its technical "Know How" in every stage of the project.</br>
+    A well-established design technique has allowed us to excel in the following stages of representation:
+     </br>• Highly detailed cad drawings of floor plans
+     </br>• Three-dimensional modeling of projects both internal and external 
+     </br>• renderings of high quality (HD)
+     </br>• virtual animation of high quality (HD) of the projects
+     </br>• executive projects of construction and engineering of the furniture
+     </br>• assistance during the various phases of work execution
+   </p>
+   <p class="texttext">The design activity is divided into several phases of work ranging from the analysis of the status quo, to the preliminary project, to the development and presentation of the final project detailed in the individual elements.</p>
+    </p>
+      <p>&nbsp;</p>  
+    <p><h5>Share:&nbsp;</h5>
+      <i class="fa fa-facebook fa-1x"></i>&nbsp;
+      <i class="fa fa-twitter fa-1x"></i>&nbsp;
+      <i class="fa fa-google-plus fa-1x"></i>&nbsp;
+      <i class="fa fa-youtube fa-1x"></i>&nbsp;
+      <i class="fa fa-linkedin fa-1x"></i>&nbsp;
+      <i class="fa fa-pinterest fa-1x"></i>&nbsp;
+      <i class="fa fa-mail fa-1x"></i>&nbsp;
+    </p>
+
+  </div><!--Fine COL MD6 --> <!-- FINE INGLESE -->
+{% else %}
+
+<!-- ITALIANO -->
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    
+    <h2 class="titolopro goldcolor">Lo Studio</h2>
+    <p class="texttext">Lo studio Sagitair  opera nel settore dell’Architettura e Design. Fondato nel 1990, oggi si propone come una realtà dinamica e flessibile volta ad offrire servizi di progettazione ad alta qualità professionale. Lo studio ha al proprio interno competenze tecniche e informatiche sviluppate dalle numerose esperienze maturate in vari settori.  L’esperienza multidisciplinare e una certa predisposizione all’innovazione progettuale unita all’attitudine per la ricerca e allo sviluppo, colloca lo studio  in una posizione di rilievo nel campo della progettazione, trasferendo il proprio “Know How” tecnico in ogni fase del progetto.</br>
+    Una consolidata tecnica progettuale ha permesso di eccellere nelle seguenti fasi di rappresentazione:
+     </br>• stesura di planimetrie cad altamente particolareggiate
+     </br>• modellazione tridimensionale dei progetti sia interni che esterni 
+     </br>• renderizzazioni di alta qualità (HD)
+     </br>• animazione virtuale di alta qualità (HD) dei progetti
+     </br>• progetti esecutivi di cantiere e ingegnerizzazione degli arredi
+     </br>• assistenza durante le varie fasi in opera di esecuzione
+   </p>
+   <p class="texttext">L'attività di progettazione si articola in più fasi di lavoro che vanno dall'analisi dello stato di fatto, al progetto di massima, fino allo sviluppo ed alla rappresentazione del progetto esecutivo particolareggiato nei singoli elementi.</p>
+    </p>
+      <p>&nbsp;</p>  
+    <p><h5>Condividi:&nbsp;</h5>
+      <i class="fa fa-facebook fa-1x"></i>&nbsp;
+      <i class="fa fa-twitter fa-1x"></i>&nbsp;
+      <i class="fa fa-google-plus fa-1x"></i>&nbsp;
+      <i class="fa fa-youtube fa-1x"></i>&nbsp;
+      <i class="fa fa-linkedin fa-1x"></i>&nbsp;
+      <i class="fa fa-pinterest fa-1x"></i>&nbsp;
+      <i class="fa fa-mail fa-1x"></i>&nbsp;
+    </p>
+
+  </div><!--Fine COL MD6 --> <!-- FINE ITALIANO -->
+{% endif %}
+
+
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"><p>&nbsp;</p>
+  
+    <img src="{{ STATIC_URL }}/img/studio.jpg" class="planimetria"></div>
+  
+  </div>
+
+
+
+</div><!-- Fine ROW -->
+
+
+
+<!-- FINE CONTENUTO -->
+
+
+
+
+
+
+{% endblock %}

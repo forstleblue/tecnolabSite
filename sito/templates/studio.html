@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!-- SPAZIO MOBILE CARICAMENTO SOTTOMENU -->
+<div class="row">
+  <div id="spaziosottomenu" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+</div>
+<!-- FINE SPAZIO SOTTOMENU -->
+
+
+<!-- ++++ CONTENUTO +++ -->
+
+<div class="row spaziotoprow">
+  
+
+<!-- ITALIANO -->
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    
+    <h2 class="titolopro goldcolor">
+      {% if session_language = 'eng' %}TURNKEY PROJECT{% else %}CHIAVI IN MANO{% endif %}
+    </h2>
+    <p class="texttext">
+      {% if session_language = 'eng' %}
+          TECNOLAB SpA has been proposing itself for about 15 years as a partner for those companies that need to promote their image and products at events throughout Europe.<br><br>
+          A work group with young, dynamic people who enthusiastically work in synergy with our clients to reach the set objectives.
+          <br><br>
+          We look after every aspect, from the design to realisation and assembly, completing all the bureaucratic aspects and delivering “turnkey” projects all over Europe.<br>
+
+      {% else %}
+          Da circa 15 anni TECNOLAB SpA si propone come partner per quelle aziende che hanno l’esigenza di promuovere la propria immagine ed i propri prodotti nelle manifestazioni di tutta Europa. <br><br>
+          Un gruppo di lavoro costituito da persone giovani e dinamiche che lavorano con passione in sinergia con i nostri clienti per raggiungere gli obiettivi prefissati.  <br><br>
+          Curiamo ogni aspetto, dalla progettazione alla realizzazione fino al montaggio, espletando tutti gli aspetti
+          burocratici e consegnando il lavoro “chiavi in mano” in tutta Europa. <br>
+      {% endif %}
+   </p>
+    <p>&nbsp;</p>  
+    <p><h5>
+      {% if session_language = 'eng' %}Share:&nbsp;{% else %}Condividi:&nbsp;{% endif %}
+    </h5>
+     {% include "componenti/social.html" %}
+    </p>
+
+  </div>
+
+
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"><p>&nbsp;</p>
+    <div class="flexslider">{% load thumbnail %}
+      <ul class="slides">
+        {% for filer in filer_list %}
+        <li>
+          <a href="/media/{{ filer.file }}" data-lightbox="roadtrip">
+            <img src="/media/{{ filer.file }}" style="border-radius:10px;"/>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div><!-- flexslider -->
+  </div>
+
+  <script type="text/javascript">
+    // Can also be used with $(document).ready()
+    $(window).load(function() {
+      $('.flexslider').flexslider({
+        animation: "slide"
+      });
+    });
+  </script>
+  
+
+
+
+</div><!-- Fine ROW -->
+
+
+
+<!-- FINE CONTENUTO -->
+
+{% endblock %}

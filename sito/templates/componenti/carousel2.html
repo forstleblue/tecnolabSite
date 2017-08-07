@@ -1,0 +1,28 @@
+<div class="row spaziotoprow">
+
+
+
+
+  <div class="col-sm col-xs-12 col-md-12 col-lg-12"> <!-- Carousel -->
+  
+  <div class="jcarousel">
+  
+    <ul>
+    {% for immagini in post.galleria.all %}
+      <li id="designmagico">
+        {% load cropping %}
+        <a href="{% cropped_thumbnail immagini "croppingrender" %}" data-lightbox="roadtrip1">
+        <img src="{% cropped_thumbnail immagini "croppingcarousel" %}" style="padding: 0px; margin-right: 5px; border-style: solid; border-width: 1px; border-color: #000000;" alt="{{ post.titolo }}"></a>
+      </li>
+    {% endfor %}
+    </ul>
+
+  </div><!-- Jcarousel end -->
+
+</div><!-- col 12 -->
+
+<div class="col-sm-1 col-md-1 col-sm-1 col-lg-1" style="top: 35px; left: 20px; position: absolute;"><a href="#" class="jcarousel-control-prev"><i class="fa fa-chevron-circle-left fa-3x"></i></a></div>
+
+<div class="col-sm-1 col-md-1 col-sm-1 col-lg-1" style="top: 35px; right: 0px; position: absolute;"> <a href="#" class="jcarousel-control-next"><i class="fa fa-chevron-circle-right fa-3x"></i></a></div>
+
+</div> <!-- ROW -->

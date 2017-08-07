@@ -1,0 +1,75 @@
+
+    
+
+
+
+ <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ MYDIR }}/"><img src="{{ STATIC_URL }}/img/logo.jpg"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <!-- BLOCCA MENU SINISTRA
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>  -->
+          <!-- MENU A DESTRA -->
+          <ul id="menuactive" class="nav navbar-nav navbar-right menutopright">
+            <li><a href="{{ MYDIR }}/">HOME</a></li>
+            <li><a href="{{ MYDIR }}/studio">STUDIO</a></li>
+            <!-- /ARCHITETTURE -->
+            <li>
+              <a href="{{ MYDIR }}/architettura/">ARCHITECTURE</b></a>
+            </li> <!-- /FINE ARCHITETTURE -->
+            <!-- MENU INTERIOR -->
+            <li>
+              <a href="{{ MYDIR }}/interior/">INTERIOR</a></li>
+               <!-- /INTERIOR -->
+            <!-- MENU ANIMAZIO -->
+            <li>
+              <a href="{{ MYDIR }}/animazione">ANIMATION 3D</a></li>
+              <!-- FINE ANIMAZIO -->
+              <!-- RENDERING -->
+            <li><a href="{{ MYDIR }}/render">RENDERING</a></li>
+            <!-- NEWS -->
+            <!--li><a href="{{ MYDIR }}/news">DESIGN</a></li-->
+            <li class="dropdown">
+              <a href="{{ MYDIR }}/news" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DESIGN <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ MYDIR }}/news">ALL</a></li>
+                {% for c in designcategory_list %}
+                <li><a href="{{ MYDIR }}/newscat/{{c.id}}">{{c.titolo_eng}}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            <!-- DESIGN -->
+            <li>
+              <a href="{{ MYDIR }}/forniture/">FURNITURE</a>
+            </li> <!-- /FINE DESIGN -->
+            <!--CONTATTI -->
+            <li><a href="{{ MYDIR }}/contatti">CONTACTS</a></li> 
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+      <!-- FINE MENU -->  
+

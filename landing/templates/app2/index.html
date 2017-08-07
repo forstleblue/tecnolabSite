@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+<div class="col-xs-12" style="margin-top:50px; margin-bottom:400px;">
+
+{% block content %}
+<table class="table table-striped">
+  	<tr>
+  		<th>id</th>
+  		<th>Titolo</th>
+  		<th>Pub Date</th>
+  		<th>Vedi</th>
+  	</tr>
+  	{% for p in page_list %}
+  	<tr style="color: #f69731">
+  		<td>{{p.id}}</td>
+  		<td>{{p.titolo}}</td>
+  		<td>{{p.pub_date}}</td>
+  		<td><a href="{% url 'landing-detail' p.id %}"><i class="fa fa-external-link"></i></a></td>
+  	</tr>
+
+  	{% endfor %}
+</table>
+
+
+
+{% for p in page_list %}
+<h1>{{page.titolo}}</h1>
+{% endfor %}
+
+
+</div>
+
+
+
+
+{% endblock %}
+
+

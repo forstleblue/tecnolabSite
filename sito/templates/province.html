@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="col-xs-12" style="margin-top:50px; margin-bottom:400px;">
+
+<table class="table table-striped">
+	<tr>
+		<th>PROVINCIA</th>
+		<th>LINK FIERE</th>
+		<th>LINK STAND</th>
+		<th>LINK SHOWROOM</th>
+	</tr>
+
+	{% for pro in province_list %}
+	 <tr style="color: #f69731">
+	 	<td><strong>{{pro.titolo}}</strong></td>
+	 	<td><a href="{% url 'fiere-provincia' pro.id %}" target="_Blank"><i class="fa fa-external-link" aria-hidden="true"></i></a></td>
+	 	<td><a href="{% url 'stand-provincia' pro.id %}" target="_Blank"><i class="fa fa-external-link" aria-hidden="true"></i></a></td>
+	 	<td><a href="{% url 'showroom-provincia' pro.id %}" target="_Blank"><i class="fa fa-external-link" aria-hidden="true"></i></a></td>
+	 </tr>
+	 {% endfor %}
+</table>
+
+</div>
+
+{% endblock %}

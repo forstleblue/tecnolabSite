@@ -1,0 +1,954 @@
+body {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  /*background-color: #ffffff;*/
+  background-color: #393536;
+  min-height: 100%;
+}
+
+
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+  #stand-h {
+    text-align: right;
+  }
+  #stand-h .text-right {
+    text-align: right;
+  }
+
+/* ---------------- AGGIUNTE MIE ----------------- */
+
+.sfondonero {
+	background-color: #ffffff;
+}
+
+/*----- MENU TOP --------- */
+
+.navbar-default {
+	background-color: #ffffff;
+	border-color: #ffffff;
+  padding-top:0px;
+  margin-top: 0px;
+}
+
+.navbar-brand {
+  padding-top: 0px;
+  padding-bottom:0px;
+}
+
+.menutopright {
+margin-top: 40px;
+background-color: #ffffff;
+}
+
+.menutopright li a,
+.menutopright li a:link,
+.menutopright li a:visited
+{
+	font-style: arial;
+	color: #000000;
+	font-size: 8pt;
+  font-weight: 200;
+  letter-spacing: 2px;
+  padding-right:0px;
+  padding-left:16px;
+}
+
+.menutopright li a:hover,
+.menutopright li a:active {
+	/*color: #bd9e55;*/
+  color: #f69731;
+}
+
+/* --- sottomenu  --- */
+
+.submenutopright {
+}
+
+.submenutopright li a,
+.submenutopright li a:link,
+.submenutopright li a:visited,
+.submenutopright li a:hover
+{
+	font-style: arial;
+	color: #bd9e55;
+}
+
+.logo {
+  width:350px;
+}
+
+
+.lingue-row {
+  margin-right: 30px;
+}
+
+
+
+/*--- THUMB CAROUSEL GALLERY ---- */
+
+
+#makeMeScrollable {
+  position: relative;
+  width:100%;
+  height: 134px;
+  left: 0px;
+}
+		
+		/* Replace the last selector for the type of element you have in
+		   your scroller. If you have div's use #makeMeScrollable div.scrollableArea div,
+		   if you have links use #makeMeScrollable div.scrollableArea a and so on. */
+#makeMeScrollable div.scrollableArea img {
+  position: relative;
+  float: left;
+  top: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 0px;
+  border-style:solid;
+  border-width: 1px;
+			/* If you don't want the images in the scroller to be selectable, try the following
+			   block of code. It's just a nice feature that prevent the images from
+			   accidentally becoming selected/inverted when the user interacts with the scroller. */
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+		}
+
+
+.showroom-gold {
+  margin-top:20px;padding-left:20px; font-weight:400;letter-spacing: 0px
+}
+/* -------- AREA CONTENUTO ----- */
+
+
+.spaziorowbottom {
+  margin-top: 25px;
+}
+
+
+.spaziotoprow {
+  position: relative;
+  margin-top: 35px;
+}
+
+.goldcolor {
+  /*color: #bd9e55;*/
+  color: #f69731;
+  font-size: 40px;
+}
+
+.goldcolor2 {
+  /*color: #bd9e55;*/
+  color: #f69731;
+  font-size: 40px;
+  float:right;
+  background-color: none;
+  margin-top:0px;
+  padding-left:20px;
+}
+
+.goldcolor3 {
+  /*color: #bd9e55;*/
+  color: #f69731;
+  font-size: 40px;
+  font-weight: 800;
+  float:right;
+  background-color: none;
+  margin-top:-20px;
+  margin-bottom: 20px;
+  padding-right:20px;
+  position: relative;
+  z-index:9999;
+}
+
+.filetto {
+  background-image: url(img/filetto.png);
+  background-position:300px 200px;
+  margin-top:20px;
+}
+
+.texttext {
+  text-align:justify;
+  font-size: 10pt;
+  padding-right: 0px;
+  line-height: 25px;
+  color: #bebebe;
+  font-weight: normal;
+  
+}
+
+.planimetria {
+position: relative;
+width: 100%;
+border: solid 0px #cccccc;
+float: right;
+right: 0px;
+top: 20px;
+}
+
+
+/* ----- FOOTER ----- */
+
+.piede {
+/*background-color: #404041;*/
+position: fixed;
+background-color: #bebebe;
+height:100px;
+bottom: 0px;
+margin-bottom:0px;
+width: 100%;
+margin-top:100px;
+z-index: 999;
+}
+
+.scrittafooter {
+  position: relative;
+  font-size: 10px;
+  color: #393536;
+  float: left;
+  z-index: 999;
+  padding-top:20px;
+}
+
+.designedby {
+  position: relative;
+  float: right;
+  position: relative;
+  font-size: 10px;
+  color: #393536;
+  z-index: 1000;
+}
+
+.designedby a,
+.designedby a:link,
+.designedby a:hover,
+.designedby a:active
+.designedby a:visited
+ {
+  font-size: 8px;
+  color: #393536;
+}
+
+.piede a,
+.piede a:link,
+.piede a:hover,
+.piede a:visited {
+  color: #393536;
+}
+
+#h2-stand-dettaglio {
+    color:#f69731;
+    margin-top:0px;
+    padding-left:20px;
+    font-weight:400;
+    letter-spacing: 0px
+  }
+
+/* --------------------------- */
+
+.mdspazio {
+  margin-left: 20px;
+}
+
+.img-responsive {
+ display: block;
+ height: auto;
+ min-height: 67px;
+ min-width: 119px;
+ max-width: 100%;
+ max-height: auto;
+ position: relative;
+ z-index: 10;
+}
+
+.img-responsive2 {
+ /*display: block; */
+ height: auto;
+ min-height: 225px;
+ min-width: 252px;
+ max-width: 100%;
+ max-height: 225px;
+}
+
+.img-responsive3 {
+ display: block;
+ height: auto;
+/* min-height: 67px;
+ min-width: 119px; */
+ max-width: 100%;
+ max-height: auto;
+ position: relative;
+ z-index: 10;
+}
+
+.img-responsive4 {
+ display: block;
+ height: auto;
+ min-height: 67px;
+ min-width: 119px;
+ max-width: 100%;
+ max-height: auto;
+ position: relative;
+ z-index: 10;
+ border-top-right-radius: 10px;
+ border-top-left-radius: 10px;
+}
+
+#spaziosottomenu {height: auto;}
+
+.super {
+  background-color: #ffffff;
+}
+
+.super a {
+  color: #000000;
+}
+
+
+a:hover,
+a:link,
+a:focus {
+  color: #f69731;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.super a:hover,
+.super a:active {
+  background-color: #ffffff;
+  color: #bd9e55;
+}
+
+
+
+#case-detail-h2 {
+    margin-top:0px;padding-left:20px; font-weight:400;letter-spacing: 0px
+  }
+
+
+/* ---- THUMBNAILS MENU -- */
+
+.sfondothumb {
+  /*background-color: #cccccc; */
+  background-color: #404041;
+  position: relative;
+  max-width: auto;
+  min-width: 157px;
+  min-height: 165px;
+  max-height: auto;
+  border-radius: 12px;
+}
+
+.sfondothumb2 {
+  background-color: #cccccc;
+  position: relative;
+  max-width: auto;
+  min-width: 100%;
+  min-height: auto;
+  max-height: auto;}
+
+.caption: {
+  top:0;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.thumbtitle {
+  position: relative;
+  top: 0px;
+  color: #ffffff;
+  font-style: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  padding-top: 0px;
+  padding-bottom:0px;
+}
+.thumbtitle2 {
+  position: relative;
+  top: 0px;
+  color: #ffffff;
+  font-style: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  padding-top: 0px;
+  padding-bottom:0px;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #bd9e55;
+  background-color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  /*color: #bd9e55;*/
+  color: #f69731;
+  background-color: transparent;
+}
+
+.titolopro {
+  font-weight: lighter;
+  letter-spacing: 2px;
+}
+
+/*-- CONTATTI -- */
+
+.contactscritte {font-size: 10pt;
+  padding-right: 0px;
+  line-height: 25px;
+  color: #000000;
+  font-weight: lighter;
+  letter-spacing: 1px;}
+
+.formcontrolcontatti {margin-left: 17px;}
+
+.textcontatti {
+  text-align:right;
+  font-size: 10pt;
+  padding-right: 30px;
+  line-height: 25px;
+  color: #000000;
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+
+.livello {
+  position: relative;
+  z-index: 10;
+}
+ .nav > li > a {
+  position: relative;
+  display: block;
+  padding: 16px 10px;
+}
+
+.imgtablet {
+  width: 100%;
+}
+
+.greymenu {
+  background-color: #EFEFEF;
+  margin-bottom: 15px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.rolloverimg :hover {
+  opacity: 0;
+}
+
+.testorollover {
+width:98%;
+font-size: 10pt;
+position: absolute;
+text-align: center;
+color: #999999;
+margin-top: 50px;
+padding-left: auto;
+padding:right: auto;
+}
+
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #bd9e55;
+  border-color: #bd9e55;
+}
+
+.btn-primary :hover,
+.btn-primary :link,
+.btn-primary :active {
+  color: #ffffff;
+  background-color: #bd9e55;
+  border-color: #bd9e55;
+}
+
+.languages {
+  background-color: #d3d3d3; 
+  color: #FFFFFF; 
+  text-align: right; 
+  font-size: 9pt; 
+  margin-top: 0px; 
+  padding-top: 0px; 
+  padding-left: 9px; 
+  padding-right: 9px; 
+  margin-right: 10px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.languages :hover,
+.languages :active,
+.languages :link,
+.languages :visited
+  {
+  background-color: #d3d3d3; 
+  color: #FFFFFF; 
+}
+
+
+/* ---- SCRITTA SLIDE -- */
+
+.tp-caption.largewhitebg {
+position:absolute;
+color:#404041;
+text-shadow:none;
+font-weight:100;
+line-height:0px;
+font-family:"Arial";
+background-color:#fff;
+padding:0px 20px;
+-webkit-border-radius:0px;
+-moz-border-radius:0px;
+border-radius:0px;
+}
+
+
+.revolutioncar{
+  color: #404041;
+  font-size: 14pt;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  padding-left: 100px;
+  font-family: Arial;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.tp-banner p {
+  margin: 0 0 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+p.revolutioncar {
+  margin: 0 0 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  line-height: 2;
+}
+
+
+.revolutioncar :hover,
+.revolutioncar :active,
+.revolutioncar :visited {
+  color: #404041;
+  font-size: 14pt;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  padding-left: 100px;
+  font-family: Arial;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.classdesignmagico {
+background-color: #8F8F8F;
+margin-left:5px;
+margin-right: 5px;
+width: 180px;
+border-radius:10px;}
+
+.postind {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0px;
+}
+
+.speakus {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  background-color: #999999;
+  float: right;
+  color: #ffffff;
+}
+
+.speakus p {
+  padding-top:3px;
+  padding-bottom:3px;
+  text-align: right;
+  color: #ffffff;
+  margin:0px;
+}
+
+.slider-radius {
+    border-radius: 10px;
+}
+
+.titolo-slide-mobile {
+  font-size: 10px;
+  background-color: #cccccc;
+  color: #000000;
+}
+/* -- slider --- */
+.hovered,
+.defaultimg {
+  border-radius:10px;
+}
+
+.tp-simpleresponsive ul {
+  border-radius: 10px;
+}
+
+.tp-simpleresponsive >ul >li{
+  border-radius: 10px;
+}
+
+.thumb-carousel {
+  border-radius: 10px;
+}
+
+
+.carousel li {
+  margin-right: 20px;
+}
+
+.tp-banner ul, ol {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+a,
+a:link,
+a:visited {
+  color:#f69731;
+  }
+
+.thumbnail {
+  padding: 1px;
+}
+
+.flex-control-nav {
+    width: 100%;
+    position: absolute;
+    bottom: -40px;
+    text-align: center;
+    display: none;
+}
+
+
+.flexslider {
+    margin: 0 0 60px;
+    background: none;
+    border: 4px solid #393536;
+    position: relative;
+    zoom: 1;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.sfondonero {
+  background-color: #393536;
+}
+
+.navbar-default {
+  background-color: #393536;
+  border-color: #393536;
+  padding-top:0px;
+  margin-top: 0px;
+}
+
+.menutopright {
+margin-top: 40px;
+background-color: #393536;
+}
+
+.languages {
+  background-color: #888888;
+}
+
+.languages :hover,
+.languages :active,
+.languages :link,
+.languages :visited
+  {
+  background-color: #888888; 
+  color: #FFFFFF; 
+}
+
+.menutopright li a,
+.menutopright li a:link,
+.menutopright li a:visited
+{
+  font-style: arial;
+  color: #bebebe;
+  font-size: 8pt;
+  font-weight: 200;
+  letter-spacing: 2px;
+  padding-right:0px;
+  padding-left:16px;
+}
+
+.menutopright li a:hover,
+.menutopright li a:active {
+  /*color: #bd9e55;*/
+  color: #f69731;
+}
+
+.navbar-brand {
+  padding-left: 0px;
+  margin-left:-10px;
+}
+
+/* ---- albero ----- */
+#albero,
+#albero a,
+#albero a:hover,
+#albero a:link,
+#albero a:active,
+#albero a:visited {
+  font-size: 9px;
+  color: #f69731;
+  padding-top:20px;
+  text-transform: uppercase;
+}
+
+#map-canvas {
+  height: 500px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.contatti {
+  color: #bebebe;
+  padding-top:30px;
+}
+
+
+#fiere .sfondothumb {
+    margin:0px;
+    padding-top:2;
+    padding-bottom: 2px;
+  }
+
+#stand {
+  padding: 5px;
+  padding-top:0px;
+  padding-bottom:5px;
+  margin-bottom:5px;
+}
+
+/* ****** IPAD LANDSCAPE ******** */
+@media (max-width: 1024px) { 
+
+  .logo {
+    padding-top:20px;
+    width: 250px;
+  }
+
+  #fiere .sfondothumb {
+    height: 180px;
+  }
+
+  .goldcolor2 {
+    font-size: 18px;
+    float: right;
+  }
+    #stand-h {
+    text-align: right;
+  }
+  #stand-h .text-right {
+    text-align: right;
+  }
+}
+
+
+/* ***** IPAD PORTRAIT ******** */
+@media (max-width: 768px) { 
+  .rev-home {
+    margin-top: 100px;
+  }
+
+  .piede {
+    position: relative;
+  }
+
+  #stand-h {
+    text-align: right;
+  }
+  #stand-h .text-right {
+    text-align: right;
+  }
+}
+
+
+/* ***** SMARTPHONE ******** */
+@media (max-width: 460px) { 
+  .logo {
+    padding-top:20px;
+    width: 260px;
+  }
+
+  .lingue-row {
+    margin-right: -30px;
+  }
+
+  .rev-home {
+    margin-top: 50px;
+  }
+
+  .piede {
+    position: relative;
+    height: auto;
+  }
+
+  .revolutioncar {
+    font-size: 8px;
+  }
+  p.revolutioncar {
+    margin: 0 0 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 2;
+  }
+
+  .goldcolor {
+    color: #f69731;
+    font-size: 20px;
+    margin-top:20px;
+  }
+
+    .goldcolor {
+      color: #f69731;
+      font-size: 20px;
+      margin-top:20px;
+    }
+
+  .goldcolor3 {
+    font-size: 20px;
+    margin-top:20px;
+    text-align: center;
+  }
+
+  .titolopro {
+    margin-top: 30px;
+  }
+
+  #fiere {
+    margin-top:30px;
+  }
+
+  .goldcolor2 {
+    text-align: center;
+    float: none;
+    padding-left: 0px;
+  }
+
+  .showroom-gold {
+    margin-top:30px;
+    padding-left:10px; 
+    padding-right: 10px;
+    font-weight:400;
+    letter-spacing: 0px;
+    text-align: center;
+  }
+
+  #fiere .sfondothumb {
+    height: auto;
+    padding-top:2;
+    padding-bottom: 2px;
+    margin-bottom: 15px;
+  }
+
+  #stand-h .text-right {
+    text-align: center;
+  }
+
+  #stand-h .goldcolor2 {
+    padding-left: 0px;
+  }
+
+  #h2-stand-dettaglio {
+    color:#f69731;
+    margin-top:0px;
+    padding-left:0px;
+    font-weight:400;
+    letter-spacing: 0px;
+    margin-top: 20px;
+
+  }
+
+  #h2-stand-dettaglio .goldcolor3 {
+    font-size: 20px;
+    color: #f69731;
+  }
+
+  #stand {
+    margin-top: 30px;
+  }
+
+  #case-detail-h2 {
+    margin-top:20px;
+    padding-left:20px;
+    font-weight:400;
+    letter-spacing: 0px
+  }
+
+  .tp-banner-container {
+    visibility: hidden;
+    display: none;
+  }
+
+  #gallery-smartphone .img-responsive {
+    border-radius: 10px;
+  }
+  .flexslider {
+    display: none;
+    visibility: hidden;
+  }
+
+  .thumbtitle {
+      font-weight: 400;
+  }
+
+  .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #393536;
+  }
+
+  .menutopright li a, .menutopright li a:link, .menutopright li a:visited {
+    font-style: arial;
+    color: #bebebe;
+    font-size: 8pt;
+    font-weight: 400;
+    letter-spacing: 2px;
+    padding-right: 0px;
+    padding-left: 16px;
+  }
+
+  .navbar-collapse {
+    max-height: 400px;
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow-x: visible;
+    border-top: 0px solid transparent;
+    box-shadow: inset 0 0px 0 rgba(255, 255, 255, 0.1);
+    -webkit-overflow-scrolling: touch;
+  }
+}

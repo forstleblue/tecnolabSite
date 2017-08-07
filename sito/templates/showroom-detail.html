@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row">
+  <div id="albero" class="hidden-xs col-sm-4 col-md-4 col-lg-4">
+  <a href="{% url 'home' %}">HOME</a> | <a href="{% url 'showroom' %}">SHOWROOM</a> | <a href="{% url 'showroom-detail' showroom.id %}">{{showroom.titolo}}</a>
+</div>
+<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+  <h2 class="titolopro goldcolor3" style="padding-top:20px;">SHOWROOM
+    <span style="font-weight:100">|</span> 
+    <span style="font-size:20px;">{{showroom.titolo}}</span></h2>
+</div>
+</div>
+
+
+
+
+<div class="hidden-xs tp-banner-container">
+    <div class="tp-banner" >
+      <ul>
+        <!-- SLIDE  -->
+        {% for filer in filer_list %}
+        <li data-transition="fade" data-slotamount="7" data-masterspeed="1500">
+          <!-- MAIN IMAGE -->
+          {% load thumbnail %}
+          <img src="{% thumbnail filer.file 1140x487 crop %}"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+</div>    
+
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+             jQuery('.tp-banner').revolution(
+            {
+              delay:4000,
+              startwidth:1140,
+              startheight:487,
+              hideThumbs:10
+            });
+        });
+      </script>
+
+
+
+
+
+<!-- Place somewhere in the <body> of your page -->
+<div class="hidden-xs flexslider" style="margin-top:15px; margin-left:-5px; padding-left:0px;">
+  <ul class="slides" style="margin-left:0px;padding-left:0px;">
+    {% for filer in filer_list %}
+    <li style="padding-right:10px; padding-left:0px;">
+      <a href="{% thumbnail filer.file 800x800 %}" data-lightbox="roadtrip">
+      <img src="{% thumbnail filer.file 400x250 crop %}" class="thumb-carousel" />
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<script type="text/javascript">
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    animationLoop: true,
+    itemWidth: 210,
+    itemMargin: 5
+  });
+});
+</script>
+
+<div class="col-xs-12 col-sm-6" style="margin-left:0px; padding-left:0px;">
+  <p style="color: #bebebe; text-align:justify;margin-top:-20px; padding-left:0px;margin-left:px;">
+    {{showroom.body|safe}}
+    <br>
+    <br>
+  </p>
+  <p style="color: #404041; text-align:justify;margin-top:-40px; padding-left:0px;margin-left:px;">
+    <br>
+    <br>
+    <br>
+    <a href="http://{{showroom.link}}" target="_Blank">{{showroom.link}}</a>
+    <br>
+    <br>
+    <br>
+  </p>
+</div>
+
+<div class="col-xs-12 col-sm-6">
+  <img src="/media/{{showroom.planimetria}}" class="img-responsive" style="margin-top:-10px;padding-top:0px;">
+</div>
+
+
+
+<div id="gallery-smartphone" class="col-xs-12 hidden-sm hidden-md hidden-lg">
+  {% for filer in filer_list %}
+  <div class="col-xs-12" style="margin-top:10px; margin-left:0px;margin-right:0px;padding-left:0px;padding-right:0px;">
+    <a href="{% thumbnail filer.file 800x800 %}" data-lightbox="roadtripx">
+      <img src="{% thumbnail filer.file 400x250 crop %}" class="img-responsive" />
+    </a>
+  </div>
+  {% endfor %}
+</div> 
+<div class="col-xs-12 hidden-sm hidden-md hidden-lg">&nbsp;<br><br>&nbsp;&nbsp;<br><br>&nbsp;</div>
+
+
+<div class="col-xs-12" style="margin-bottom:400px;height:400px;"><br>&nbsp;</div>
+
+{% endblock %}

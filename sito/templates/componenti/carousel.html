@@ -1,0 +1,18 @@
+  <!-- ++++ THUMB CAROUSEL GALLERIA -->
+<div class="row spaziotoprow">
+
+<div class="col-xs-12 col-md-12">
+  
+  <div id="makeMeScrollable">
+    {% for immagini in post.galleria.all %}
+    {% load cropping %}
+    <a href="">
+    <img src="{% cropped_thumbnail immagini "croppingcarousel" %}" alt="Demo image" id="thumbs" />
+    {% endfor %}
+  </div>
+  
+</div><!-- end col md 12 -->
+
+</div> <!-- end row -->
+
+      <!-- ++++ FINE THUMB CAROUSEL GALLERIA -->

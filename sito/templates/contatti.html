@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row">{% load staticfiles %}
+
+
+<div id="albero" class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+  <a href="{% url 'home' %}">HOME</a> | <a href="{% url 'contatti' %}">{% if session_language = 'eng' %}CONTACT{% else %}CONTATTI{% endif %}</a>
+</div>
+<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+  <h2 class="titolopro text-right goldcolor2">{% if session_language = 'eng' %}CONTACT{% else %}CONTATTI{% endif %}</h2>
+</div>
+
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <p class="contatti">
+          <br>
+          <strong><span style="font-size:18px;">Tecnolab S.p.A.</span></strong>
+          <br>
+          <br>
+          Centro Direzionale Pasubio<br>
+          Via Prà Bordoni, 10<br>
+          36010 ZANÈ (VI) ITALY
+          <br>
+          <br>
+          {% if session_language = 'eng' %}
+            Tel. +39 0445 315500<br>
+            Fax. +39 0445 314721<br>
+          {% else %}
+            Phone. +39 0445 315500<br>
+            Fax. +39 0445 314721<br>
+          {% endif %}
+          <br><br>
+          Info:<br>
+          <a href="mailto:contact@tecnolabstand.it">contact@tecnolabstand.it</a><br><br>
+          {% if session_language = 'eng' %}Sales Manager:{% else %}Responsabile Commerciale:{% endif %} <a href="mailto:zorzetto@tecnolabstand.it">zorzetto@tecnolabstand.it</a><br><br>
+          {% if session_language = 'eng' %}Administration:{% else %}Uff. Amministrazione:{% endif %} <a href="mailto:amministrazione@tecnolabstand.it">amministrazione@tecnolabstand.it</a><br><br>
+        <p>
+    </div>
+
+    <div id="map-canvas" class="col-xs-12 col-sm-6 col-md-9 col-lg-9"></div>
+    
+</div><!-- fine row -->
+
+
+
+<script>
+
+function initMap() {
+  var myLatlng = new google.maps.LatLng(45.720467,11.447298);
+  var mapOptions = {
+    zoom: 4,
+    center: myLatlng
+  }
+  
+  var usRoadMapType = new google.maps.StyledMapType([{"stylers":[{"saturation":-100},{"gamma":1}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"saturation":50},{"gamma":0},{"hue":"#50a5d1"}]},{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"color":"#333333"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"weight":0.5},{"color":"#333333"}]},{"featureType":"transit.station","elementType":"labels.icon","stylers":[{"gamma":1},{"saturation":50}]}], {name: 'US Road Atlas'});
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      title:"Tecnolab S.p.A.",
+      animation: google.maps.Animation.DROP,
+      icon: "{% static 'img/marker.png' %}"
+  });
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'), {
+    zoom: 12,
+    center: {lat: 45.720467, lng: 11.447298},
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'usroadatlas']
+    }
+  });
+  
+  marker.setMap(map); 
+
+  map.mapTypes.set('usroadatlas', usRoadMapType);
+  map.setMapTypeId('usroadatlas');
+}
+</script>
+
+
+
+   </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwy61PvZ52sOF61fl71x4QycgJ_8xQq94&callback=initMap"
+        async defer></script>
+
+
+
+<div class="col-xs-12" style="height:250px; margin-bottom:250px;"></div>
+
+
+{% endblock %}
+

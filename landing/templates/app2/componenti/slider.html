@@ -1,0 +1,25 @@
+
+<section id="slider">
+
+<div class="flexslider">
+  <ul class="slides">
+  	{% for slider in page.slider.all %}
+    <li>{% load cropping %}
+      <img src="{% cropped_thumbnail slider "revolution" %}" class="img-responsive" />
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<script type="text/javascript">
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    slideshowSpeed: 5000,          //Integer: Set the speed of the slideshow cycling, in milliseconds
+    animationSpeed: 600
+  });
+});
+</script>
+
+</section>

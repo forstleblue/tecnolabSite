@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+<h1 class="titolopro goldcolor">DESIGN</h1>
+
+
+
+
+
+<!-- NUOVO -->
+<div class="row">
+  {% for news in news_list %}
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+    <div class="thumbnail" style="min-height: 610px;">{% load cropping %}
+      <img src="{% cropped_thumbnail news "croppingdesign" %}" alt="{{post.titolo}}">
+      <div class="caption">
+        <!-- INGLESE -->
+        {% if session_language = 'en' %}
+        <h3 class="goldcolor">{{ news.titolo_eng}}</h3>
+        <h6>{{ news.pub_date }}</h6>
+        <p>{{news.body_eng|safe|truncatechars:240}}</p>
+        <p><a href="{{MYDIR}}/news/{{news.id}}" class="btn btn-default" role="button">Continue</a></p>
+        <!-- FINE INGLESE -->
+        {% else %}
+        <h3 class="goldcolor">{{ news.titolo}}</h3>
+        <h6>{{ news.pub_date }}</h6>
+        <p>{{news.body|safe|truncatechars:240}}</p>
+        <p><a href="{{MYDIR}}/news/{{news.id}}" class="btn btn-default" role="button">Continua</a></p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div><!-- FINE ROW -->
+
+
+ <!-- Next/Prev page links  -->
+ <div class="col-sm-12" style="text-align: center">
+        {% if news_list and news_list.paginator.num_pages > 1 %}
+        <div class="pagination" style="margin-top: 20px; margin-left: -20px; ">
+            <span class="step-links">
+                {% if news_list.has_previous %}
+                    <a href= "?page={{ news_list.previous_page_number }}"><i class="fa fa-caret-left fa-2x"></i></a>
+                {% endif %}
+
+                <span class="current">
+                    &nbsp;Pagina {{ news_list.number }} di {{ news_list.paginator.num_pages }}
+                </span>
+
+                {% if news_list.has_next %}
+                    <a href="?page={{ news_list.next_page_number }}"> <i class="fa fa-caret-right fa-2x"></i></a>
+                {% endif %}
+            </span>
+        </div>
+        {% endif %}
+</div>
+
+{% endblock%}

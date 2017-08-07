@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if session_language = 'en' %}
+<h1 class="goldcolor">{{ news.titolo_eng }}</h1>
+{% else %}
+<h1 class="goldcolor">{{ news.titolo }}</h1>
+{% endif %}
+
+<div class="row">
+
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="video-container" id="youtuberesponsivo">
+    {% if news.video.all %}
+    {% for video in news.video.all %}   
+
+    <iframe id="ytplayer" type="text/html" width="800" height="450"
+    src="https://www.youtube.com/embed/{{ video.codice }}?rel=0&showinfo=0&theme=light&start={{video.start}}"
+    frameborder="0" allowfullscreen>
+    </iframe>
+
+    {% endfor %}
+
+    {% else %}
+    {% load cropping %}
+     <img class="img-responsive" src="{% cropped_thumbnail news "croppingslide" %}" style="width: 100%;">
+    {% endif %}
+
+    </div>
+  </div> <!-- FINE COL MD 12-->
+  <hr>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+{% if session_language = 'en' %}
+<p>{{ news.body_eng|safe}}</p>
+{% else %}
+<p>{{ news.body|safe}}</p>
+{% endif %}
+</div>
+<hr>
+{% for immagini in news.galleria.all %}
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" style="padding-bottom: 20px;">
+    {% load cropping %}
+    <a href="{% cropped_thumbnail immagini "designnews" %}" data-lightbox="{{news.titolo}}">
+    <img class="img-responsive" src="{% cropped_thumbnail immagini "designthumb" %}" style="width: 100%;"></a>
+</div>  
+{% endfor %}
+
+
+
+
+
+</div>
+
+
+{% endblock %}

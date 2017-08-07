@@ -1,0 +1,66 @@
+<div class="tp-banner-container rev-home" style="margin-bottom:150px;">
+
+
+		<div class="tp-banner" >
+			<ul>
+				<!-- SLIDE  -->
+				{% for post in slider_list %}
+				<li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
+					<!-- MAIN IMAGE -->
+                    {% load cropping %}
+					<img src="{% cropped_thumbnail post "croppingslide" %}"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat" title="{{ post.titolo }}">
+					<!-- LAYERS -->
+					<!-- LAYER NR. 1 -->
+					<div class="tp-caption largewhitebg skewfromrightshort fadeout"
+					style="border-radius: 0px 20px 20px 0px"
+						data-x="0"
+						data-y="400"
+						data-speed="500"
+						data-start="1200"
+						data-easing="Power4.easeOut"><p class="revolutioncar"><a href="{{ post.link }}">
+						{{ post.titolo }}
+					    </a></p>
+					</div>
+					...
+
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+
+
+		<script type="text/javascript">
+				
+			var revapi;
+        	jQuery(document).ready(function() {
+
+             revapi = jQuery('.tp-banner').revolution(
+            {
+              delay:4000,
+              startwidth:1140,
+              startheight:487,
+              hideThumbs:10,
+              fullWidth:"off",
+              fullScreen:"off",
+              navigationStyle:"bullet",
+              fullScreenOffsetContainer: ""
+
+            });
+
+        }); //ready
+			</script>
+
+</div>
+
+
+
+{% for post in slider_list %}
+<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+	{% load cropping %}
+	<a href="{{post.link}}" alt="{{post.titolo}}">
+		<img src="{% cropped_thumbnail post "croppingslide" %}"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat" class="img-responsive slider-radius" style="margin-top:20px;" title="{{ post.titolo }}">
+	</a>
+	<h4 class="thumbtitle">{{post.titolo}}</h4>
+</div>
+{% endfor %}

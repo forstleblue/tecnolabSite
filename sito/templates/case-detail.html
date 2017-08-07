@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row">
+  <div id="albero" class="hidden-xs col-sm-4">
+  <a href="{% url 'home' %}">HOME</a> | <a href="{% url 'case-history' %}">CASE HISTORY</a> | <a href="{% url 'casehistory-detail' case.id %}">{{case.titolo}}</a>
+</div>
+  <div class="col-xs-12 col-sm-8">
+    <h2 id="case-detail-h2" class="titolopro goldcolor3">CASE HISTORY
+      <span style="font-weight:100">|</span> 
+      <span style="font-size:20px;">{{case.titolo}}</span></h2>
+  </div>
+</div>
+
+
+
+
+<div class="row">
+  {% for filer in filer_list %}
+  <div class="col-xs-12 col-sm-6" style="margin-bottom: 20px;">{% load thumbnail %}
+    <a href="{% thumbnail filer.file 800x800 %}" data-lightbox="roadtrip">
+      <img src="{% thumbnail filer.file 1140x487 crop %}" class="img-responsive">
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="col-xs-12">
+  <br>
+  <br>
+  <br>
+</div>
+
+<div class="col-xs-12 col-sm-6" style="margin-left:0px; padding-left:0px;">
+  <p style="color: #bebebe; text-align:justify;margin-top:-20px; padding-left:0px;margin-left:px;">
+    {% if session_language = 'eng' %}
+      {{case.body_uk|safe}}
+    {% else %}
+      {{case.body|safe}}
+    {% endif %}
+    <br>
+    <br>
+  </p>
+  <p style="color: #404041; text-align:justify;margin-top:-40px; padding-left:0px;margin-left:px;">
+    <br>
+    <br>
+    <br>
+    <a href="http://{{case.link}}" target="_Blank">{{case.link}}</a>
+    <br>
+    <br>
+    <br>
+  </p>
+</div>
+
+<div class="col-xs-12 col-sm-6">
+  <img src="/media/{{case.planimetria}}" class="img-responsive" style="margin-top:-10px;padding-top:0px;">
+</div>
+
+<div class="col-xs-12" style="height:250px; margin-bottom:250px;"></div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+
+{% if stampa_list %}
+<div class="col-xs-12 speakus">
+	{% if session_language = 'en' %}
+	<p>PUBLISHED PROJECTS</p>
+	{% else %}
+	<p>PARLANO DI NOI</p>
+	{% endif %}
+</div>
+
+{% for stampa in stampa_list %}
+<div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+	<a href="{{stampa.link}}" target="_blank">
+		{% load cropping %}
+		<img class="img-responsive" src="{% cropped_thumbnail stampa "cropping" %}">
+	</a>
+</div>
+{% endfor %}
+
+
+
+{% endif %}
